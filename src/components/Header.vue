@@ -1,6 +1,9 @@
 <script setup>
 import { ref } from "vue";
 
+const navigate= (link)=> {
+  router.push(link);
+}
 </script>
 
 <template>
@@ -8,9 +11,9 @@ import { ref } from "vue";
     <nav>
       <img src="../assets/images/catfish.png" class="img" alt="logo" />
       <p>CatFish Movies</p>
-      <!-- <RouterLink to="/login" custom v-slot="{ navigate }">
+      <RouterLink to="/Login" custom v-slot="{ navigate }">
         <button @click="navigate" role="link">Login</button>
-      </RouterLink> -->
+      </RouterLink>
     </nav>
     <img src="../assets/images/3.webp" id="hero">
     <div class="intro">
