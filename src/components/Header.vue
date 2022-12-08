@@ -1,71 +1,27 @@
 <script setup>
 import { ref } from "vue";
 
-const navigate= (link)=> {
+const navigate = (link) => {
   router.push(link);
 }
 </script>
 
 <template>
-  <div id="header">
-    <nav>
-      <img src="../assets/images/catfish.png" class="img" alt="logo" />
-      <p>CatFish Movies</p>
-      <RouterLink to="/Login" custom v-slot="{ navigate }">
-        <button @click="navigate" role="link">Login</button>
-      </RouterLink>
-    </nav>
-    <img src="../assets/images/3.webp" id="hero">
-    <div class="intro">
-      <p>
-        CatFish Movies is a website for users to purchase and watch their wanted movies freely. We Sincerely hope that
-        you would have an amazing watching experience
-        here in our website.
-      </p>
-    </div>
-  </div>
-  <footer>
-    <p>
-      CatFish is the all‑in‑one platform to build a beautiful website.
-    </p>
-  </footer>
+  <nav>
+    <img src="../assets/images/Catfish.webp" class="img" alt="logo" id="logo" />
+    <p>CatFish Movies</p>
+    <ul>
+      <li>   
+        <RouterLink to="/Home" @click="navigate" custom>Home</RouterLink>
+      </li>
+      <li>   
+        <RouterLink to="/Login" @click="navigate" custom>Login</RouterLink>
+      </li>
+  </ul>
+  </nav>
 </template>
 
 <style scoped>
-
-footer {
-  width: 100%;
-  background: darkgrey;
-}
-
-footer>p{
-  margin:0;
-  padding:30px;
-  color: white;
-  font-size: 50px;
-  text-align: center;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight:500;
-}
-
-.intro {
-  margin-top: 10px;
-  float: right;
-  width: 28%;
-  height: 820px;
-  border-radius: 20px;
-  background-color: black;
-  opacity: 0.9;
-}
-
-.intro>p {
-  text-align: center;
-  font-size: 20px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: white;
-  padding: 10px;
-}
-
 nav {
   width: 100%;
   height: 150px;
@@ -80,21 +36,32 @@ nav>p {
   font-weight: 100px;
   font-size: 80px;
   display: inline-block;
-  margin-top: 2%;
-  margin-left: 35%;
+  margin-left: 23%;
   text-align: center;
+  transform:translateY(-20%);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+nav>ul {
+  float: right;
+  margin: 0;
+  margin-right: 1.9rem;
 }
 
-#hero {
-  border-radius: 20px;
-  margin-top: 10px;
-  width: 70%;
-  size: contain;
+nav>ul>li {
+  color:black;
+  font-size:30px;
+  margin-right:10px;
+  display: inline-block;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  transform:translateY(90%);
+}
+nav>ul>li:hover {
+  color:white;
+}
+
+#logo {
+  width:10%;
+  height:100%;
+
 }
 </style>
