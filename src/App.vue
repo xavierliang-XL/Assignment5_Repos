@@ -1,19 +1,18 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Home from './view/home.vue'
 </script>
 
 <template>
     <nav>
-    <img src="../assets/images/Catfish.webp" class="img" alt="logo" id="logo" />
+    <img src="./assets/images/Catfish.webp" class="img" alt="logo" id="logo" />
     <p>CatFish Movies</p>
     <ul>
       <li>   
-        <RouterLink to="/Home" @click="navigate" custom>Home</RouterLink>
+        <router-link to="/">Home</router-link>
       </li>
       <li>   
-        <RouterLink to="/Login" @click="navigate" custom>Login</RouterLink>
+        <router-link to="/Login">Login</router-link>
       </li>
   </ul>
   </nav>
