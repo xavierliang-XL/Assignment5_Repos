@@ -18,6 +18,11 @@ const routes=[
     path:'/Purchase',
     name:'Purchase',
     component:Purchase
+},
+{
+    path:'/ShoppingCart',
+    name:'ShoppingCart',
+    component:ShoppingCart
 }
 ]
 

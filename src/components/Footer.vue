@@ -9,7 +9,9 @@
 <style scoped>
 footer {
     width: 100%;
-    background: darkgrey;
+    background: black;
+    opacity:0.9;
+    border-radius:20px;
 }
 
 footer>p {

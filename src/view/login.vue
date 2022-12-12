@@ -70,7 +70,7 @@ const isSuccessful = () => {
                 <tr>
                     <td colspan="2" align="center">
 
-                        <input type="button" id="btn_sub" value="register" @click="isSuccessful">
+                        <input type="button" id="btn_sub" value="Login" @click="isSuccessful">
                     </td>
                 </tr>
             </table>
@@ -79,9 +79,9 @@ const isSuccessful = () => {
         <div v-if="submitted" class="submitted">
             <p>You submitted:</p>
             <p>Username: {{ username }}</p>
-            <p>Password {{ password }}</p>
-            <p v-if="data" class="welcome">Welcome! You will be directed to the purchase page in {{ seconds }} seconds
-            </p>
+            <p>Password: {{ password }}</p>
+            <p v-if="data" class="welcome">Welcome! You will be directed to the purchase page in {{ seconds }} seconds</p>
+            <p v-if="!data" class="welcome">Invalid input. Incorrect username or password.</p>
         </div>
     </div>
 </template>
@@ -102,10 +102,8 @@ const isSuccessful = () => {
 }
 
 .login {
+    margin-top:5%;
     padding:30px;
-    width:100%;
-    height:100%;
-    background: radial-gradient(grey,white);
 }
 
 .form-1 {
@@ -148,8 +146,8 @@ const isSuccessful = () => {
     width: 150px;
     height: 40px;
     margin-top: 20px;
-    background: linear-gradient(to right, yellow, orange);
-    border: 1px solid yellow;
+    background: linear-gradient(to right, red, darkred);
+    border: 1px solid red;
     border-radius: 5px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 600;

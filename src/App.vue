@@ -1,42 +1,48 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
+import { useRouter } from "vue-router";
+const router=useRouter();
+const navigate = (link) => {
+  router.push(link);
+}
 </script>
 
 <template>
-    <nav>
+  <nav>
     <img src="./assets/images/Catfish.webp" class="img" alt="logo" id="logo" />
     <p>CatFish Movies</p>
     <ul>
-      <li>   
-        <router-link to="/">Home</router-link>
-      </li>
-      <li>   
-        <router-link to="/Login">Login</router-link>
-      </li>
-  </ul>
+        <router-link to="/" custom v-slot="{ navigate }">
+          <button @click="navigate" role="link">Home</button>
+        </router-link>
+        <router-link to="/login" custom v-slot="{ navigate }">
+          <button @click="navigate" role="link">Login</button>
+      </router-link>
+    </ul>
   </nav>
-  <router-view/>
+  <router-view />
 </template>
 
 <style scoped>
 nav {
   width: 100%;
-  height: 150px;
-  background: linear-gradient(to right, yellow, orange);
+  height: 100px;
+  background: linear-gradient(to right, red, darkred);
   border-radius: 20px;
   line-height: 80px;
   opacity: 1;
 }
 
 nav>p {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 100px;
-  font-size: 80px;
+  font-size: 60px;
   display: inline-block;
-  margin-left: 23%;
+  margin-left: 27%;
   text-align: center;
-  transform:translateY(-20%);
+  transform: translateY(-50%);
+  color: white;
 }
 
 nav>ul {
@@ -45,22 +51,25 @@ nav>ul {
   margin-right: 1.9rem;
 }
 
-nav>ul>li {
-  color:black;
-  font-size:30px;
-  margin-right:10px;
+button {
+  color: white;
+  border:0;
+  background:0;
+  font-size: 30px;
+  margin-right: 10px;
   display: inline-block;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  transform:translateY(90%);
+  transform: translateY(40%);
 }
-nav>ul>li:hover {
-  color:white;
+
+button:hover {
+  color: black;
 }
 
 #logo {
-  width:10%;
-  height:100%;
-
+  width: 8%;
+  height: 100%;
+  transform: translateY(-25%);
 }
 </style>
 

@@ -15,7 +15,7 @@
     margin-top: 10px;
     float: right;
     width: 28%;
-    height: 820px;
+    height: 590px;
     border-radius: 20px;
     background-color: black;
     opacity: 0.9;
