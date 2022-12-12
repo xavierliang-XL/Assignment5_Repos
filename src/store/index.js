@@ -16,7 +16,7 @@ export const useStore = defineStore('store', {
       })).data.results;
       
       this.movies = data.map((movie) => {
-        return {w
+        return {
           id: movie.id,
           poster: movie.poster_path,
         }
