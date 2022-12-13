@@ -8,17 +8,20 @@ const username = ref("");
 const password = ref("");
 const seconds = ref(5);
 const router=useRouter();
+var isLoggedIn=false;
 const isSuccessful = () => {
     submitted.value = true;
     if (username.value == "tmdb" && password.value == "movies") {
         data.value = true;
         var countDownDate = new Date().getTime();
-        setInterval(function () {
+        const interval = setInterval(function () {
         var now = new Date().getTime();
         var distance = now - countDownDate;
         seconds.value = Math.round(5 - (distance / 1000));
         if(seconds.value<=0){
             router.push('/Purchase');
+            isLoggedIn=true;
+            clearInterval(interval);
         }
     }, 1000);
     }
@@ -31,7 +34,7 @@ const isSuccessful = () => {
         <h1 class="title">Use tmdb+movies to Login! </h1>
         <form class='form-1' action="#" method="GET">
             <table>
-                <tr>
+                <tr>    
                     <td class="td_left"><label for="username">Username</label></td>
                     <td class="td_right"><input type="text" name="username" id="username"
                             placeholder="plz input username" v-model="username">

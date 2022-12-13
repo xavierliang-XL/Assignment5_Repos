@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../view/home.vue";
 import Login from "../view/login.vue";
 import Purchase from "../view/purchase.vue";
+import ShoppingCart from "../view/shoppingcart.vue";
 
 const routes=[
 {
@@ -24,7 +25,7 @@ const routes=[
     name:'ShoppingCart',
     component:ShoppingCart
 }
-]
+];
 
 const router = createRouter({
     history: createWebHistory(),

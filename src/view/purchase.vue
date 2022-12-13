@@ -1,22 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import axios from "axios";
-import { useStore } from "../store/index.js";
-import { ref } from "vue";
-
-const store = useStore();
-await store.getMovies();
-const movies = store.movies;
-console.log(movies);
+import DisplayMovies from '../components/DisplayMovies.vue';
 </script>
 
 
 <template>
-  <div class="account-container">
-    <div v-for=" (movie, index) in movies">
-      <p>{{ movie.id }}</p>
-    </div>
-  </div>
+  <Suspense>
+    <DisplayMovies/>
+  </Suspense>
 </template>
 
 <style scoped>

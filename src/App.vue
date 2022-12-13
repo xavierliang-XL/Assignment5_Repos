@@ -3,9 +3,6 @@
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { useRouter } from "vue-router";
 const router=useRouter();
-const navigate = (link) => {
-  router.push(link);
-}
 </script>
 
 <template>
@@ -16,8 +13,11 @@ const navigate = (link) => {
         <router-link to="/" custom v-slot="{ navigate }">
           <button @click="navigate" role="link">Home</button>
         </router-link>
-        <router-link to="/login" custom v-slot="{ navigate }">
+        <router-link to="/Login" custom v-slot="{ navigate }" v-if="!isLoggedIn">
           <button @click="navigate" role="link">Login</button>
+      </router-link>
+      <router-link to="/ShoppingCart" custom v-slot="{ navigate }" v-if="isLoggedIn">
+        <button @click="navigate" role="link">ShoppingCart</button>
       </router-link>
     </ul>
   </nav>
