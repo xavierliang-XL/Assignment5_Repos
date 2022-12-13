@@ -1,6 +1,8 @@
 <script setup>
+import { useCart } from "../store/index.js";
 const props = defineProps(["value"]);
 const emits = defineEmits(["toggleModal"]);
+const cart = useCart();
 console.log(props);
 </script>
 
@@ -8,18 +10,19 @@ console.log(props);
   <Teleport to="body">
     <div class="modal-outer-container" @click.self="emits('toggleModal')" custom>
       <div class="modal-inner-container">
-        <button class="close-button" @click="emits('toggleModal')" >X</button>
+        <button class="close-button" @click="emits('toggleModal')">X</button>
         <p>
-          <h1>{{ props.value.title }}</h1>
-          Original Title - {{ props.value.original_title }} <br />
-          Release Date: {{ props.value.release_date }} <br />
-          Overview: {{ props.value.overview }}
+        <h1>{{ props.value.title }}</h1>
+        Original Title - {{ props.value.original_title }} <br />
+        Release Date: {{ props.value.release_date }} <br />
+        Overview: {{ props.value.overview }}
         </p>
-        <button class="cart" id="btn_sub">Add To Cart</button>
+        <button class="cart" id="btn_sub" @click="cart.addToCart(props.value)">Add To Cart</button>
       </div>
     </div>
   </Teleport>
 </template>
+
 
 <style scoped>
 .modal-outer-container {
@@ -40,11 +43,12 @@ console.log(props);
   height: 400px;
   position: relative;
 }
-.modal-inner-container{
-  border-radius:20px;
+
+.modal-inner-container {
+  border-radius: 20px;
 }
 
-.close-button{
+.close-button {
   border-top-right-radius: 20px;
 }
 
@@ -60,15 +64,15 @@ console.log(props);
   color: white;
 }
 
-.close-button:hover{
-  color:black;
-  background:white;
+.close-button:hover {
+  color: black;
+  background: white;
 }
 
-p{
-  margin-left:10px;
-  font-family:'Times New Roman', Times, serif;
-  font-size:20px;
+p {
+  margin-left: 10px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20px;
 }
 
 #btn_sub {

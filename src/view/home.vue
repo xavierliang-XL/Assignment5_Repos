@@ -7,6 +7,6 @@
     <div class="home">
         <Hero />
     </div>
-    <Router-View />
     <Footer />
+    <Router-View />
 </template>

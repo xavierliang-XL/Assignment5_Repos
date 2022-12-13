@@ -19,14 +19,10 @@
     border-radius: 20px;
     background-color: black;
     opacity: 0.9;
-}
-
-.intro>p {
     text-align: center;
     font-size: 20px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
-    padding: 10px;
 }
 
 #hero {

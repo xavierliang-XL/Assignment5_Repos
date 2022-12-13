@@ -2,6 +2,8 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { useRouter } from "vue-router";
+import {isLoggedIn} from "./store/index";
+
 const router=useRouter();
 </script>
 
@@ -48,7 +50,7 @@ nav>p {
 nav>ul {
   float: right;
   margin: 0;
-  margin-right: 1.9rem;
+  margin-right: 1.9%;
 }
 
 button {
@@ -56,7 +58,6 @@ button {
   border:0;
   background:0;
   font-size: 30px;
-  margin-right: 10px;
   display: inline-block;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   transform: translateY(40%);

@@ -1,12 +1,13 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
 import axios from "axios";
-import { useStore } from "../store/index.js";
+import { useStore, useCart } from "../store/index.js";
 import { ref } from "vue";
 import Modal from '../components/Modal.vue';
 
 const store = useStore();
 await store.getMovies();
+
 const movies = store.movies;
 console.log(movies);
 

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
+import {isLoggedIn} from "../store/index";
 
 const data = ref(false);
 const submitted = ref(false);
@@ -8,7 +9,7 @@ const username = ref("");
 const password = ref("");
 const seconds = ref(5);
 const router=useRouter();
-var isLoggedIn=false;
+
 const isSuccessful = () => {
     submitted.value = true;
     if (username.value == "tmdb" && password.value == "movies") {
