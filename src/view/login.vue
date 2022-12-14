@@ -21,7 +21,7 @@ const isSuccessful = () => {
         seconds.value = Math.round(5 - (distance / 1000));
         if(seconds.value<=0){
             router.push('/Purchase');
-            isLoggedIn=true;
+            isLoggedIn.value=true;
             clearInterval(interval);
         }
     }, 1000);
@@ -74,7 +74,7 @@ const isSuccessful = () => {
                 <tr>
                     <td colspan="2" align="center">
 
-                        <input type="button" id="btn_sub" value="Login" @click="isSuccessful">
+                        <input type="button" id="btn_sub" value="Login" @click="isSuccessful()">
                     </td>
                 </tr>
             </table>

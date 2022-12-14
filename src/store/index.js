@@ -1,5 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from 'axios';
+import {ref} from 'vue';
 
 export const useStore = defineStore('store', {
   state: () => {
@@ -30,7 +31,7 @@ export const useStore = defineStore('store', {
   }
 });
 
-export var isLoggedIn=false;
+export const isLoggedIn=ref(false);
 
 export const useCart = defineStore('cart',{
   state: () => {

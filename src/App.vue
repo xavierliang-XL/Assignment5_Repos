@@ -2,24 +2,29 @@
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
 import { useRouter } from "vue-router";
-import {isLoggedIn} from "./store/index";
+import { isLoggedIn, useCart } from "./store/index";
 
-const router=useRouter();
+const router = useRouter();
+const cart=useCart();
 </script>
 
 <template>
   <nav>
-    <img src="./assets/images/Catfish.webp" class="img" alt="logo" id="logo" />
+    <img src="./assets/images/catfish.png" class="img" alt="logo" id="logo" />
     <p>CatFish Movies</p>
     <ul>
-        <router-link to="/" custom v-slot="{ navigate }">
-          <button @click="navigate" role="link">Home</button>
-        </router-link>
-        <router-link to="/Login" custom v-slot="{ navigate }" v-if="!isLoggedIn">
-          <button @click="navigate" role="link">Login</button>
+      <div id="block"/>
+      <router-link to="/" custom v-slot="{ navigate }">
+        <button @click="navigate" role="link">Home</button>
+      </router-link>
+      <router-link to="/Login" custom v-slot="{ navigate }" v-if="!isLoggedIn">
+        <button @click="navigate" role="link">Login</button>
+      </router-link>
+      <router-link to="/Purchase" custom v-slot="{ navigate }" v-if="isLoggedIn">
+        <button @click="navigate" role="link">Purchase</button>
       </router-link>
       <router-link to="/ShoppingCart" custom v-slot="{ navigate }" v-if="isLoggedIn">
-        <button @click="navigate" role="link">ShoppingCart</button>
+        <img src="./assets/images/cart.png"  @click="navigate" role="link" id="cart" >
       </router-link>
     </ul>
   </nav>
@@ -37,7 +42,7 @@ nav {
 }
 
 nav>p {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   font-weight: 100px;
   font-size: 60px;
   display: inline-block;
@@ -49,18 +54,24 @@ nav>p {
 
 nav>ul {
   float: right;
+  padding:auto;
+  width:15%;
   margin: 0;
   margin-right: 1.9%;
 }
 
 button {
+  display:inline-block;
   color: white;
-  border:0;
-  background:0;
+  border: 0;
+  background: 0;
   font-size: 30px;
-  display: inline-block;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   transform: translateY(40%);
+}
+
+#block{
+  width:50%;
 }
 
 button:hover {
@@ -72,5 +83,14 @@ button:hover {
   height: 100%;
   transform: translateY(-25%);
 }
+
+#cart {
+  display:inline-block;
+  width: 15%;
+  height: 100%;
+  transform: translateY(60%);
+}
+
+
 </style>
 
