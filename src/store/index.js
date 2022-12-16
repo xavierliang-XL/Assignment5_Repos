@@ -25,6 +25,7 @@ export const useStore = defineStore('store', {
           release_date: movie.release_date,
           overview: movie.overview,
           poster: movie.poster_path,
+          item_count:0,
         }
       });
     },
@@ -36,18 +37,31 @@ export const isLoggedIn=ref(false);
 export const useCart = defineStore('cart',{
   state: () => {
     return {
-      purchase: [],     
+      purchase:[],
       size:0, 
     }
   },
   actions:{
+    async getCart(){
+        const store=useStore();
+        for(movie of store.movies){
+          this.purchase[this.size]=movie;
+          this.size+=1;
+        } 
+    },
+
     addToCart(movie){
-      this.purchase[this.size]=movie;
-      this.size=this.size+1;
+      var index=0;
+      for(let i=0; i<this.purchase.length; i++){
+        if(this.purchase[i]==movie){
+          index=i;
+        }
+      }
+      this.purchase[index].item_count+=1;
     },
 
     getItem(index){
-      return purchase[index];
+      return this.purchase[index];
     }
   }
 })
