@@ -42,22 +42,9 @@ export const useCart = defineStore('cart',{
     }
   },
   actions:{
-    async getCart(){
-        const store=useStore();
-        for(movie of store.movies){
-          this.purchase[this.size]=movie;
-          this.size+=1;
-        } 
-    },
-
     addToCart(movie){
-      var index=0;
-      for(let i=0; i<this.purchase.length; i++){
-        if(this.purchase[i]==movie){
-          index=i;
-        }
-      }
-      this.purchase[index].item_count+=1;
+      this.purchase[this.size]=movie;
+      this.size=this.size+1;
     },
 
     getItem(index){

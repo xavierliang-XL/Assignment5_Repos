@@ -3,18 +3,14 @@ import { createApp } from "vue";
 import { useCart } from "../store/index.js"
 
 const cart = useCart();
-await cart.getCart();
 </script>
 
 <template>
 
 <div class="cartlist" v-for="item in cart.purchase" v-if="cart.purchase">
-    <div  v-if="item.item_count!=0">
+    <div class="display">
         <div>
-        {{item.id}}: {{item.title}}
-        </div>
-        <div>
-            count: {{item.item_count}}
+            {{item.id}}: {{item.title}}
         </div>
     </div>
 
@@ -23,5 +19,14 @@ await cart.getCart();
 </template>
 
 <style scoped>
-
+.cartlist{
+    height:100%;
+}
+.display{
+    color:black;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 300;
+    width:100%;
+    margin:10px;
+}
 </style>
