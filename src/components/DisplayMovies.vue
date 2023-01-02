@@ -13,7 +13,7 @@ console.log(movies);
 
 
 const showModal = ref(false);
-const selectedId = ref(0);
+const selectedId = ref(null);
 
 const openModal = (value) => {
   showModal.value = true;

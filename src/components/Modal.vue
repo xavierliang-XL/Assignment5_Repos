@@ -1,9 +1,8 @@
 <script setup>
-import { useCart } from "../store/index.js";
+import { useCart,useStore } from "../store/index.js";
 const props = defineProps(["value"]);
 const emits = defineEmits(["toggleModal"]);
 const cart = useCart();
-console.log(props);
 </script>
 
 <template>
@@ -85,6 +84,7 @@ p {
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 600;
   font-size: 20px;
+  margin-left:2%;
 }
 
 #btn_sub:hover {

@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import axios from 'axios';
-import {ref} from 'vue';
+import { ref } from 'vue';
 
 export const useStore = defineStore('store', {
   state: () => {
@@ -16,7 +16,7 @@ export const useStore = defineStore('store', {
           query: "cowboy",
         }
       })).data.results;
-      
+
       this.movies = data.map((movie) => {
         return {
           id: movie.id,
@@ -25,30 +25,49 @@ export const useStore = defineStore('store', {
           release_date: movie.release_date,
           overview: movie.overview,
           poster: movie.poster_path,
-          item_count:0,
         }
       });
     },
   }
 });
 
-export const isLoggedIn=ref(false);
+export const isLoggedIn = ref(false);
 
-export const useCart = defineStore('cart',{
+export const useCart = defineStore('cart', {
   state: () => {
     return {
-      purchase:[],
-      size:0, 
+      purchase: [],
+      size: 0,
+      unique: [],
     }
   },
-  actions:{
-    addToCart(movie){
-      this.purchase[this.size]=movie;
-      this.size=this.size+1;
+
+
+  actions: {
+    addToCart(movie) {
+      this.purchase[this.size] = movie;
+      this.size = this.size + 1;
     },
 
-    getItem(index){
-      return this.purchase[index];
+    removeFromCart(movie) {
+      for (let i = 0; i < this.purchase.length; i++) {
+        if (movie == this.purchase[i]) {
+          delete this.purchase[i];
+          this.size =this.size - 1;
+          break;
+        }
+      }
+    },
+
+    setUnique(){
+      this.unique=new Set(this.purchase);
+    },
+
+    clear(){
+      this.purchase=[];
+      this.size=0;
+      this.unique=[];
     }
+
   }
 })
