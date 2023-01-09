@@ -32,7 +32,7 @@ const closeModal = () => {
         <p>
             #{{ movie.id }}: {{ movie.title }}
         </p>
-          <img v-if="movie.poster" :src="'https://image.tmdb.org/t/p/w500' + movie.poster" class="image" @click="openModal(movie)"/>
+        <img v-if="movie.poster" :src="'https://image.tmdb.org/t/p/w500' + movie.poster" class="image" @click="openModal(movie)"/>
         <Modal v-if="showModal" @toggleModal="closeModal()" :value="selectedId" />
     </div>
   </div>
@@ -40,16 +40,26 @@ const closeModal = () => {
 
 <style scoped>
 .movies{
-    background-color:black;
+    background-color: darkred;
     border-radius:20px;
     padding:10px;
-    margin:20px;
+    height:100%;
+    margin-bottom:50px;
     color:white;
-    display:inline-block;
     font-family:'Courier New', Courier, monospace;
 }
 
+.container{
+  box-sizing:border-box;
+  max-width:max-content;
+  display:grid;
+  grid-template-columns: auto auto auto;
+}
+
 .movies>img{
-    border-radius: 20px;
+  height:90.5%;
+  width:99%;
+  margin:auto;
+  border: 5px solid black;
 }
 </style>

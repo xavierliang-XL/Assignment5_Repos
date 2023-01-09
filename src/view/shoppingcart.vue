@@ -10,6 +10,7 @@ cart.setUnique();
 
 <div class="cartlist" v-for="item in cart.unique" v-if="cart.purchase">
     <div class="display">
+        <img v-if="item.poster" :src="'https://image.tmdb.org/t/p/w500' + item.poster" class="image"/>
         <div class="name">
             {{item.id}}: {{item.title}}
         </div>
