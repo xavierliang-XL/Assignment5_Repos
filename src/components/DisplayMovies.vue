@@ -33,7 +33,7 @@ const closeModal = () => {
             #{{ movie.id }}: {{ movie.title }}
         </p>
         <img v-if="movie.poster" :src="'https://image.tmdb.org/t/p/w500' + movie.poster" class="image" @click="openModal(movie)"/>
-        <Modal v-if="showModal" @toggleModal="closeModal()" :value="selectedId" />
+        <Modal v-if="showModal" @toggleModal="closeModal()" :value="[selectedId,index]" />
     </div>
   </div>
 </template>

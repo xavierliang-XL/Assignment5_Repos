@@ -43,8 +43,8 @@ nav {
 
 nav>p {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  font-weight: 100px;
-  font-size: 60px;
+  font-weight: 1vw;
+  font-size: 4vw;
   display: inline-block;
   margin-left: 27%;
   text-align: center;
@@ -55,7 +55,7 @@ nav>p {
 nav>ul {
   float: right;
   padding:auto;
-  width:15%;
+  width:20%;
   margin: 0;
   margin-right: 1.9%;
 }
@@ -65,7 +65,7 @@ button {
   color: white;
   border: 0;
   background: 0;
-  font-size: 30px;
+  font-size: 2vw;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   transform: translateY(40%);
 }

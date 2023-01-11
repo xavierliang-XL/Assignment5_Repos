@@ -17,12 +17,12 @@ footer {
 footer>p {
     margin: 0;
     width:100%;
-    padding: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
     color: white;
-    font-size: 30px;
+    font-size: 2vw;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transform: translateX(10%);
     font-weight: 500;
 }
 </style>

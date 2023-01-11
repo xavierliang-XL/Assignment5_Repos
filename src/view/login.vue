@@ -89,6 +89,7 @@ const isSuccessful = () => {
         </div>
     </div>
 </template>
+    
 <style scoped>
 .title{
     text-align: center;
