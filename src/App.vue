@@ -24,7 +24,7 @@ const cart=useCart();
         <button @click="navigate" role="link">Purchase</button>
       </router-link>
       <router-link to="/ShoppingCart" custom v-slot="{ navigate }" v-if="isLoggedIn">
-        <img src="./assets/images/cart.png"  @click="navigate" role="link" id="cart" >
+        <img src="./assets/images/cart.png"  @click="navigate" role="link" id="cart" >  
       </router-link>
     </ul>
   </nav>
@@ -35,7 +35,7 @@ const cart=useCart();
 nav {
   width: 100%;
   height: 100px;
-  background: linear-gradient(to right, red, darkred);
+  background-color: black;
   border-radius: 20px;
   line-height: 80px;
   opacity: 1;
@@ -75,7 +75,7 @@ button {
 }
 
 button:hover {
-  color: black;
+  color: darkred;
 }
 
 #logo {

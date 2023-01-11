@@ -9,7 +9,7 @@ const cart = useCart();
   <Teleport to="body">
     <div class="modal-outer-container" @click.self="emits('toggleModal')" custom>
       <div class="modal-inner-container">
-        <button class="close-button" @click="emits('toggleModal')">X</button>
+        <button class="close-button" @click="emits('toggleModal')">Close</button>
         <p>
         <h1>{{ props.value.title }}</h1>
         Original Title - {{ props.value.original_title }} <br />

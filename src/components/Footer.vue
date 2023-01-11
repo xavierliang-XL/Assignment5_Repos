@@ -16,11 +16,13 @@ footer {
 
 footer>p {
     margin: 0;
-    padding: 30px;
+    width:100%;
+    padding: 10px;
     color: white;
-    font-size: 50px;
+    font-size: 30px;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transform: translateX(10%);
     font-weight: 500;
 }
 </style>
