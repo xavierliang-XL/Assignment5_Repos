@@ -1,7 +1,6 @@
 <script setup>
 import { useCart} from "../store/index.js";
-const props = defineProps(["value"])[0];
-const index = defineProps(["value"])[1];
+const props = defineProps(["value"]);
 const emits = defineEmits(["toggleModal"]);
 const cart = useCart();
 </script>
@@ -17,8 +16,7 @@ const cart = useCart();
         Release Date: {{ props.value.release_date }} <br />
         Overview: {{ props.value.overview }}
         </p>
-        <button class="cart" id="btn_sub" @click="cart.addToCart(props.value)">Add To Cart</button>
-        you already have {{ cart.purchase.filter(x => x==cart.unique[index]).length }} of this item in cart.
+        <button class="cart" id="btn_sub" @click="cart.addToCart(props.value.id)">Add To Cart</button>
       </div>
     </div>
   </Teleport>

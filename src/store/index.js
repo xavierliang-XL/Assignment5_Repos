@@ -44,23 +44,20 @@ export const useCart = defineStore('cart', {
 
 
   actions: {
-    addToCart(movie) {
+    addToCart(id) {
       this.size = this.size + 1;
-      this.purchase[this.size-1] = movie;
+      this.purchase[this.size-1] = id;
  
     },
 
-    removeFromCart(movie) {
+    removeFromCart(id) {
       for (let i = 0; i < this.purchase.length; i++) {
-        if (movie == this.purchase[i]) {
-          delete this.purchase[i];
+        if (id == this.purchase[i]) {
+          this.size-=1;
+          this.purchase.splice(i,1);
           break;
         }
       }
-    },
-
-    setUnique(){
-      this.unique=new Set(this.purchase);
     },
 
     clear(){

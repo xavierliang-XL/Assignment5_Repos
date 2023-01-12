@@ -6,7 +6,7 @@ import DisplayMovies from '../components/DisplayMovies.vue';
 
 <template>
   <Suspense>
-    <DisplayMovies/>
+    <DisplayMovies />
   </Suspense>
 </template>
 

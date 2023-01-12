@@ -24,6 +24,9 @@ const cart=useCart();
         <button @click="navigate" role="link">Purchase</button>
       </router-link>
       <router-link to="/ShoppingCart" custom v-slot="{ navigate }" v-if="isLoggedIn">
+        <div class="count">
+          {{ cart.count }}
+        </div>
         <img src="./assets/images/cart.png"  @click="navigate" role="link" id="cart" >  
       </router-link>
     </ul>
@@ -91,6 +94,18 @@ button:hover {
   transform: translateY(60%);
 }
 
+.count{
+  position:absolute;
+  color:white;
+  font-size:0.8vw;
+  font-weight:600;
+  z-index:5;
+  height:10px;
+  margin-right:7.05%;
+  top:0;
+  margin-top:1.2%;
+  right:0;
+}
 
 </style>
 
