@@ -10,6 +10,7 @@ const cart = useCart();
     <div class="modal-outer-container" @click.self="emits('toggleModal')" custom>
       <div class="modal-inner-container">
         <button class="close-button" @click="emits('toggleModal')">Close</button>
+        <img v-if="props.value.poster" :src="'https://image.tmdb.org/t/p/w500' + props.value.poster" class="img" />
         <p>
         <h1>{{ props.value.title }}</h1>
         Original Title - {{ props.value.original_title }} <br />
@@ -34,6 +35,14 @@ const cart = useCart();
   width: 100vw;
   height: 100vh;
   z-index: 3;
+}
+
+.img {
+  float:left;
+  border-radius: 20px;
+  width: 20%;
+  height:90%;
+  margin:10px;
 }
 
 .modal-outer-container .modal-inner-container {
