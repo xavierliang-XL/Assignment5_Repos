@@ -100,13 +100,13 @@ const isSuccessful = () => {
     border: 3px solid darkred;
     background-color: pink;
     font-size: 2vw;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 900;
     margin-left: auto;
     margin-right: 15%;
-    text-align:center;
-    padding:1vw;
-    width:50%;
+    text-align: center;
+    padding: 1vw;
+    width: 50%;
     color: darkred;
 }
 
@@ -114,14 +114,14 @@ const isSuccessful = () => {
     border: 3px solid darkgreen;
     background-color: lightgreen;
     font-size: 2vw;
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 900;
     margin-left: auto;
     margin-right: 15%;
-    text-align:center;
-    padding:1vw;
-    width:50%;
-    color:darkgreen;
+    text-align: center;
+    padding: 1vw;
+    width: 50%;
+    color: darkgreen;
 }
 
 .login {

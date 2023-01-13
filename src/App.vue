@@ -5,7 +5,7 @@ import { useRouter } from "vue-router";
 import { isLoggedIn, useCart } from "./store/index";
 
 const router = useRouter();
-const cart=useCart();
+const cart = useCart();
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const cart=useCart();
     <img src="./assets/images/catfish.png" class="img" alt="logo" id="logo" />
     <p>CatFish Movies</p>
     <ul>
-      <div id="block"/>
+      <div id="block" />
       <router-link to="/" custom v-slot="{ navigate }">
         <button @click="navigate" role="link">Home</button>
       </router-link>
@@ -27,7 +27,7 @@ const cart=useCart();
         <div class="count">
           {{ cart.count }}
         </div>
-        <img src="./assets/images/cart.png"  @click="navigate" role="link" id="cart" >  
+        <img src="./assets/images/cart.png" @click="navigate" role="link" id="cart">
       </router-link>
     </ul>
   </nav>
@@ -57,14 +57,14 @@ nav>p {
 
 nav>ul {
   float: right;
-  padding:auto;
-  width:20%;
+  padding: auto;
+  width: 20%;
   margin: 0;
   margin-right: 1.9%;
 }
 
 button {
-  display:inline-block;
+  display: inline-block;
   color: white;
   border: 0;
   background: 0;
@@ -73,8 +73,8 @@ button {
   transform: translateY(40%);
 }
 
-#block{
-  width:50%;
+#block {
+  width: 50%;
 }
 
 button:hover {
@@ -88,24 +88,23 @@ button:hover {
 }
 
 #cart {
-  display:inline-block;
+  display: inline-block;
   width: 15%;
   height: 100%;
   transform: translateY(60%);
 }
 
-.count{
-  position:absolute;
-  color:white;
-  font-size:0.8vw;
-  font-weight:600;
-  z-index:5;
-  height:10px;
-  margin-right:7.05%;
-  top:0;
-  margin-top:1.2%;
-  right:0;
+.count {
+  position: absolute;
+  color: white;
+  font-size: 0.8vw;
+  font-weight: 600;
+  z-index: 5;
+  height: 10px;
+  margin-right: 7.05%;
+  top: 0;
+  margin-top: 1.2%;
+  right: 0;
 }
-
 </style>
 
