@@ -38,11 +38,11 @@ const cart = useCart();
 }
 
 .img {
-  float:left;
+  float: left;
   border-radius: 20px;
   width: 20%;
-  height:90%;
-  margin:10px;
+  height: 90%;
+  margin: 10px;
 }
 
 .modal-outer-container .modal-inner-container {
